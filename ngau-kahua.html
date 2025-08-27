@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+  (function() {
+    var langPref = localStorage.getItem('lang');
+    var path = window.location.pathname;
+    if (langPref === 'es' && !path.includes('-es.html')) {
+      window.location.replace(path.replace('.html', '-es.html'));
+    }
+    if (langPref === 'en' && path.includes('-es.html')) {
+      window.location.replace(path.replace('-es.html', '.html'));
+    }
+  })();
+</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ctext x='50%25' y='72%25' text-anchor='middle' font-size='36' font-family='Poppins,Arial,sans-serif' fill='%234579ea' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Shortfilms - Damián Hernández | Digital Animator</title>
+  <meta name="description" content="Portfolio of Damián Hernández, digital animator and artist. Explore my work in short films, including 'Estaré Siempre Contigo', 'Ngau Kahua', and 'Munay (Teaser)'.">
+  <style>
+    .gallery-section {
+      max-width: 1200px;
+      margin: 32px auto 0 auto;
+      padding: 0 16px;
+      text-align: center;
+    }
+    .ngau-kahua-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 48px;
+      position: relative;
+    }
+    .ngau-kahua-thumb {
+      width: 80vw;
+      max-width: 800px;
+      aspect-ratio: 16/9;
+      height: auto;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.28);
+      border: none;
+      background: #222;
+      cursor: pointer;
+      transition: box-shadow 0.18s;
+      display: block;
+      margin: 0 auto;
+    }
+    .custom-play-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(69,121,234,0.92);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      font-size: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      cursor: pointer;
+      transition: background 0.18s, transform 0.18s;
+      z-index: 2;
+      padding: 0;
+    }
+    .custom-play-btn i {
+      margin-left: 4px;
+      margin-top: 2px;
+    }
+    .custom-play-btn:hover {
+      background: #fff;
+      color: #4579ea;
+      transform: translate(-50%, -50%) scale(1.12);
+      box-shadow: 0 8px 32px rgba(69,121,234,0.18);
+    }
+    .festival-laurels {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      margin: 0px 0 24px 0;
+    }
+    .laurel-img {
+      height: 180px;
+      filter: drop-shadow(0 2px 8px rgba(69,121,234,0.10));
+      transition: transform 0.18s;
+    }
+    .laurel-img:hover {
+      transform: scale(1.08);
+      filter: drop-shadow(0 4px 16px rgba(69,121,234,0.18));
+    }
+    
+    .production-details-card {
+      background: #23283a;
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin: 1px auto 45px auto;
+      color: #e0e0e0;
+      max-width: 600px;
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 1.08rem;
+    }
+    .production-details-card i {
+      color: #4579ea;
+      font-size: 1.4rem;
+      margin-top: 2px;
+    }
+    .highlight-compositing {
+      background:#23283a;
+      border-radius:12px;
+      padding:14px 20px;
+      margin:18px auto 32px auto;
+      color:#e0e0e0;
+      max-width:600px;
+      box-shadow:0 2px 12px 0 rgba(0,0,0,0.12);
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size: 1.08rem;
+    }
+    .highlight-compositing i {
+      color:#4579ea;
+      font-size:1.4rem;
+    }
+    .before-after-section {
+      max-width: 900px;
+      margin: 0 auto 48px auto;
+      padding: 0 16px;
+    }
+    .before-after-section h2 {
+      color: #4579ea;
+      margin: 32px 0 18px 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .before-after-videos {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .before-after-video {
+      position: relative;
+      max-width: 350px;
+      width: auto;
+    }
+    .before-after-thumb {
+      max-width: 350px;
+      width: 100%;
+      border-radius: 0;
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
+      background: #222;
+      cursor: pointer;
+      display: block;
+    }
+    /* Modal styles (igual que antes) */
+    .gallery-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.55);
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.3s;
+    }
+    .gallery-modal.active {
+      display: flex;
+    }
+    .gallery-modal-img,
+    .gallery-modal-video {
+      max-width: 80vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 4px 32px 0 rgba(0,0,0,0.28);
+      background: #222;
+      object-fit: contain;
+      z-index: 2;
+      margin: auto;
+      display: block;
+    }
+    .gallery-modal-video {
+      background: #222;
+    }
+    .gallery-modal-btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 54px;
+      height: 54px;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #galleryPrev, #galleryNext {
+      display: none !important;
+    }
+    .gallery-modal-close {
+      position: fixed;
+      top: 32px;
+      right: 32px;
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-modal-close:hover {
+      background: #4579ea;
+      color: #fff;
+    }
+    @media (max-width: 900px) {
+      .ngau-kahua-thumb {
+        width: 90vw;
+        max-width: 90vw;
+      }
+      .gallery-modal-close {
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+      }
+      .before-after-videos {
+        flex-direction: column;
+        gap: 18px;
+      }
+      .before-after-video {
+        max-width: 98vw;
+      }
+      .before-after-thumb {
+        max-width: 98vw;
+      }
+    }
+    
+  </style>
+
+          <style>
+    @media (max-width: 700px) {
+      nav > a,
+      nav > .dropdown {
+        display: none !important;
+      }
+      nav > a[href="collaborations.html"],
+      nav > a[href="about.html"],
+      nav > .dropdown > a[href="about.html"] {
+        display: inline-block !important;
+      }
+      .lang-btn {
+        display: inline-block !important;
+        margin-right: 4vw; /* Ajusta este valor según lo que te guste */
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <nav>
+        <div class="dropdown">
+          <a href="index.html" >Portfolio</a>
+        </div>
+        <div class="dropdown">
+          <a href="animation.html" >Animation</a>
+          <div class="dropdown-content">
+            <a href="animation-2d.html">2D</a>
+            <a href="animation-3d.html">3D</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="visual-development.html">Visual Development</a>
+          <div class="dropdown-content">
+            <a href="background-art.html">Background Art</a>
+            <a href="posters.html">Posters</a>
+            <a href="styleframes.html">Styleframes</a>
+            <a href="manga-coloring.html">Manga Coloring</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="color-design.html">Color Design</a>
+          <div class="dropdown-content">
+            <a href="color-exploration.html">Color Exploration</a>
+            <a href="colorscripts.html">Colorscripts</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="shortfilms.html" class="active-link">Shortfilms</a>
+          <div class="dropdown-content">
+            <a href="estare-siempre-contigo.html">Estaré Siempre Contigo</a>
+            <a href="ngau-kahua.html">Ngau Kahua</a>
+            <a href="munay-teaser.html">Munay (Teaser)</a>
+          </div>
+        </div>
+        <a href="collaborations.html">Collaborations</a>
+        <a href="about.html" >About</a>
+        </nav>
+      <button id="langToggle" class="lang-btn" aria-label="Change language">ES</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-section animation-intro">
+      <h1 class="portfolio-title">Ngau Kahua</h1>
+      <p class="intro-text">
+        "Ngau Kahua" is a shortfilm I produced in collaboration with three other artists during my third year at college. I served as general producer, art supervisor and compositing director.
+      </p>
+    </section>
+    <div class="production-details-card">
+      <i class="fas fa-info-circle"></i>
+      <span>
+        <strong>Production Details:</strong><br>
+        Year: 2023<br>
+        Duration: 3 min<br>
+        Team: Loreto Gómez, Damián Hernández, Catalina Baltazar, Macarena Mathias<br>
+        Technique: 2D Digital Animation<br>
+      </span>
+    </div>
+    <div class="ngau-kahua-flex">
+      <video id="ngauKahuaVideo" src="NgauKahua.mp4" poster="NgauVideoCard.webp" class="gallery-thumb ngau-kahua-thumb" data-type="video" data-index="0" muted></video>
+      <button id="customPlayBtn" class="custom-play-btn" aria-label="Play">
+        <i class="fas fa-play"></i>
+      </button>
+    </div>
+    <div class="laurels-main">
+  <div class="laurel-group">
+    <img src="winner1.webp" alt="Winner" class="laurel-img-big">
+  </div>
+  <div class="laurel-group">
+    <img src="mention1.webp" alt="Honorable Mention" class="laurel-img-big">
+  </div>
+</div>
+<div class="laurels-nominations">
+  <img src="nomination1.webp" alt="Nomination 1" class="laurel-img-small">
+  <img src="nomi2.webp" alt="Nomination 2" class="laurel-img-small">
+  <img src="nomi3.webp" alt="Nomination 3" class="laurel-img-small">
+  <img src="nomi4.webp" alt="Nomination 4" class="laurel-img-small">
+  <img src="nomi5.webp" alt="Nomination 5" class="laurel-img-small">
+  <img src="nomi6.webp" alt="Nomination 6" class="laurel-img-small">
+  <img src="nomi7.webp" alt="Nomination 7" class="laurel-img-small">
+  <img src="nomi8.webp" alt="Nomination 8" class="laurel-img-small">
+</div>
+    <div class="highlight-compositing">
+      <i class="fas fa-layer-group"></i>
+      <span>
+        <strong>Compositing Director:</strong> I led and made the entire compositing process, blending animation, backgrounds, effects, and color to achieve the final look of each scene.
+      </span>
+    </div>
+    <div class="before-after-section">
+      <div class="before-after-videos">
+        <div class="before-after-video">
+          <video id="beforeVideo" src="Compositing1.mp4" poster="compo1card.webp" class="gallery-thumb before-after-thumb" data-type="video" data-index="1" muted></video>
+          <button id="beforePlayBtn" class="custom-play-btn" aria-label="Play">
+            <i class="fas fa-play"></i>
+          </button>
+        </div>
+        <div class="before-after-video">
+          <video id="afterVideo" src="Compositing2.mp4" poster="compo2card.webp" class="gallery-thumb before-after-thumb" data-type="video" data-index="2" muted></video>
+          <button id="afterPlayBtn" class="custom-play-btn" aria-label="Play">
+            <i class="fas fa-play"></i>
+          </button>
+        </div>
+        <!-- Más videos si tienes, sigue el mismo patrón y aumenta el data-index -->
+      </div>
+    </div>
+    <div class="gallery-modal" id="galleryModal">
+      <button class="gallery-modal-close" id="galleryClose" aria-label="Close"><i class="fas fa-times"></i></button>
+      <button class="gallery-modal-btn" id="galleryPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <img src="" alt="Gallery Full" class="gallery-modal-img" id="galleryModalImg" style="display:none;">
+      <video src="" controls class="gallery-modal-video" id="galleryModalVideo" style="display:none;"></video>
+      <button class="gallery-modal-btn" id="galleryNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <div class="highlight-video-editor">
+      <i class="fas fa-video"></i>
+      <span>
+        <strong>Video Editor:</strong> I edited the entire shortfilm, handling all the video montage using Premiere Pro.
+      </span>
+    </div>
+
+    <div class="contact-details-card">
+  <div class="contact-title">Contact Me</div>
+  <div class="contact-icons">
+    <a href="mailto:damianh082003@gmail.com" aria-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.instagram.com/damianh_art" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</div>
+  </main>
+  
+  <script>
+    // Galería interactiva con soporte para imágenes y videos
+    const thumbs = document.querySelectorAll('.gallery-thumb');
+    const modal = document.getElementById('galleryModal');
+    const modalImg = document.getElementById('galleryModalImg');
+    const modalVideo = document.getElementById('galleryModalVideo');
+    const closeBtn = document.getElementById('galleryClose');
+    const prevBtn = document.getElementById('galleryPrev');
+    const nextBtn = document.getElementById('galleryNext');
+    const items = Array.from(thumbs).map(el => ({
+  type: el.dataset.type,
+  src: el.dataset.full || el.src || el.getAttribute('src'), // usa data-full si existe
+  poster: el.getAttribute('poster') || ''
+}));
+    let currentIndex = 0;
+
+    function openModal(index) {
+      currentIndex = index;
+      showItem(currentIndex);
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      modalImg.style.display = 'none';
+      modalVideo.style.display = 'none';
+      modalVideo.pause();
+    }
+
+    function showItem(index) {
+      currentIndex = (index + items.length) % items.length;
+      const item = items[currentIndex];
+      if (item.type === 'img') {
+        modalImg.src = item.src;
+        modalImg.style.display = 'block';
+        modalVideo.style.display = 'none';
+        modalVideo.pause();
+      } else if (item.type === 'video') {
+        modalVideo.src = item.src;
+        modalVideo.poster = item.poster;
+        modalVideo.style.display = 'block';
+        modalImg.style.display = 'none';
+        modalVideo.play();
+      }
+    }
+
+    thumbs.forEach((thumb, idx) => {
+      thumb.addEventListener('click', () => openModal(idx));
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // Flechas ocultas porque solo hay un video
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+
+    // Cerrar con ESC
+    window.addEventListener('keydown', (e) => {
+      if (modal.classList.contains('active')) {
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') showItem(currentIndex - 1);
+        if (e.key === 'ArrowRight') showItem(currentIndex + 1);
+      }
+    });
+
+    // Cerrar al click fuera de la imagen/video
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  </script>
+  <script>
+    // Botón de play personalizado para el video principal y before/after
+    document.addEventListener('DOMContentLoaded', function() {
+      // Principal
+      const ngauKahuaVideo = document.getElementById('ngauKahuaVideo');
+      const customPlayBtn = document.getElementById('customPlayBtn');
+      customPlayBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal(0);
+      });
+
+      // Before
+      const beforePlayBtn = document.getElementById('beforePlayBtn');
+      beforePlayBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal(1);
+      });
+
+      // After
+      const afterPlayBtn = document.getElementById('afterPlayBtn');
+      afterPlayBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal(2);
+      });
+    });
+  </script>
+      <footer>
+    <div class="footer-content">
+      © 2025 Damián Hernández. All rights reserved.
+    </div>
+  </footer>
+        <script>
+  const langBtn = document.getElementById('langToggle');
+  // Detecta si estás en la versión español
+  let isSpanish = window.location.pathname.includes('-es.html');
+  langBtn.textContent = isSpanish ? 'EN' : 'ES';
+
+  langBtn.addEventListener('click', function() {
+    // Cambia preferencia en localStorage
+    localStorage.setItem('lang', isSpanish ? 'en' : 'es');
+    // Redirige a la versión opuesta
+    let newUrl = window.location.pathname;
+    if (isSpanish) {
+      newUrl = newUrl.replace('-es.html', '.html');
+    } else {
+      newUrl = newUrl.replace('.html', '-es.html');
+    }
+    window.location.pathname = newUrl;
+  });
+
+  // Al cargar, redirige según preferencia guardada
+  window.addEventListener('DOMContentLoaded', function() {
+    const langPref = localStorage.getItem('lang');
+    if (langPref === 'es' && !window.location.pathname.includes('-es.html')) {
+      window.location.pathname = window.location.pathname.replace('.html', '-es.html');
+    }
+    if (langPref === 'en' && window.location.pathname.includes('-es.html')) {
+      window.location.pathname = window.location.pathname.replace('-es.html', '.html');
+    }
+  });
+</script>
+</body>
+</html>

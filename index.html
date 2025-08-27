@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Damián Hernández | Digital Animator</title>
+  <meta name="description" content="Portfolio of Damián Hernández, digital animator and artist. Explore my work in animation, visual development, and more.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ctext x='50%25' y='72%25' text-anchor='middle' font-size='36' font-family='Poppins,Arial,sans-serif' fill='%234579ea' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap">
+  </noscript>
+  <style>
+    @media (max-width: 700px) {
+      nav > a,
+      nav > .dropdown {
+        display: none !important;
+      }
+      nav > a[href="collaborations.html"],
+      nav > a[href="about.html"],
+      nav > .dropdown > a[href="about.html"] {
+        display: inline-block !important;
+      }
+      .lang-btn {
+        display: inline-block !important;
+        margin-right: 4vw; /* Ajusta este valor según lo que te guste */
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+<nav>
+  <div class="dropdown">
+    <a href="index.html" class="active-link">Portfolio</a>
+  </div>
+  <div class="dropdown">
+    <a href="animation.html">Animation</a>
+    <div class="dropdown-content">
+      <a href="animation-2d.html">2D</a>
+      <a href="animation-3d.html">3D</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a href="visual-development.html">Visual Development</a>
+    <div class="dropdown-content">
+      <a href="background-art.html">Background Art</a>
+      <a href="posters.html">Posters</a>
+      <a href="styleframes.html">Styleframes</a>
+      <a href="manga-coloring.html">Manga Coloring</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a href="color-design.html">Color Design</a>
+    <div class="dropdown-content">
+      <a href="color-exploration.html">Color Exploration</a>
+      <a href="colorscripts.html">Colorscripts</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a href="shortfilms.html">Shortfilms</a>
+    <div class="dropdown-content">
+      <a href="estare-siempre-contigo.html">Estaré Siempre Contigo</a>
+      <a href="ngau-kahua.html">Ngau Kahua</a>
+      <a href="munay-teaser.html">Munay (Teaser)</a>
+    </div>
+  </div>
+  <a href="collaborations.html" class="about-link">Collaborations</a>
+  <a href="about.html" class="about-link">About</a>
+</nav>
+      <button id="langToggle" class="lang-btn" aria-label="Change language">ES</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-section">
+      <img src="ProfilePicture.webp" alt="Portrait of Damián Hernández" class="profile-avatar animated-avatar" width="90" height="90" loading="eager">
+      <h1 class="main-name logo animated-name">Damián Hernández</h1>
+      <p class="intro-text">
+        ¡Hello there! I'm Damián, a soon-to-be digital animation graduate passionate about animation, color, visual development, and storytelling.
+        Explore my work below or learn more about me. Feel free to reach out if you have any questions.
+      </p>
+    </section>
+
+    <h2 class="portfolio-title">Portfolio</h2>
+    <div class="portfolio-categories">
+      <a href="animation.html" class="category-card">
+        <img src="miimagen1.webp" alt="Animation" />
+        <h3>ANIMATION</h3>
+      </a>
+      <a href="visual-development.html" class="category-card">
+        <img src="miimagen2.webp" alt="Visual Development" />
+        <h3>VISUAL DEVELOPMENT</h3>
+      </a>
+      <a href="color-design.html" class="category-card">
+        <img src="miimagen4.webp" alt="Color Design" />
+        <h3>COLOR DESIGN</h3>
+      </a>
+      <a href="shortfilms.html" class="category-card">
+        <img src="miimagen5.webp" alt="Shortfilms" />
+        <h3>SHORTFILMS</h3>
+      </a>
+    </div>
+
+    <div class="contact-details-card">
+      <div class="contact-title">Contact Me</div>
+      <div class="contact-icons">
+        <a href="mailto:damianh082003@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.instagram.com/damianh_art" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-content">
+      © 2025 Damián Hernández. All rights reserved.
+    </div>
+  </footer>
+  <script>
+    // Botón de idioma
+    const langBtn = document.getElementById('langToggle');
+    let isSpanish = window.location.pathname.includes('-es.html');
+    langBtn.textContent = isSpanish ? 'EN' : 'ES';
+
+    langBtn.addEventListener('click', function() {
+      localStorage.setItem('lang', isSpanish ? 'en' : 'es');
+      let newUrl = window.location.pathname;
+      if (isSpanish) {
+        newUrl = newUrl.replace('-es.html', '.html');
+      } else {
+        newUrl = newUrl.replace('.html', '-es.html');
+      }
+      window.location.pathname = newUrl;
+    });
+
+    window.addEventListener('DOMContentLoaded', function() {
+      const langPref = localStorage.getItem('lang');
+      if (langPref === 'es' && !window.location.pathname.includes('-es.html')) {
+        window.location.pathname = window.location.pathname.replace('.html', '-es.html');
+      }
+      if (langPref === 'en' && window.location.pathname.includes('-es.html')) {
+        window.location.pathname = window.location.pathname.replace('-es.html', '.html');
+      }
+    });
+  </script>
+</body>
+</html>

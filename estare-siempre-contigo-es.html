@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+  (function() {
+    var langPref = localStorage.getItem('lang');
+    var path = window.location.pathname;
+    if (langPref === 'es' && !path.includes('-es.html')) {
+      window.location.replace(path.replace('.html', '-es.html'));
+    }
+    if (langPref === 'en' && path.includes('-es.html')) {
+      window.location.replace(path.replace('-es.html', '.html'));
+    }
+  })();
+</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ctext x='50%25' y='72%25' text-anchor='middle' font-size='36' font-family='Poppins,Arial,sans-serif' fill='%234579ea' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Cortometrajes - Damián Hernández | Animador Digital</title>
+  <meta name="description" content="Portafolio de Damián Hernández, animador digital y artista. Explora mi trabajo en cortometrajes, incluyendo 'Estaré Siempre Contigo', 'Ngau Kahua' y 'Munay (Teaser)'.">
+  <style>
+    .gallery-section {
+      max-width: 1200px;
+      margin: 32px auto 0 auto;
+      padding: 0 16px;
+      text-align: center;
+    }
+    .ngau-kahua-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 48px;
+      position: relative;
+    }
+    .ngau-kahua-thumb {
+      width: 70vw;
+      max-width: 800px;
+      aspect-ratio: 16/9;
+      height: auto;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.28);
+      border: none;
+      background: #222;
+      cursor: pointer;
+      transition: box-shadow 0.18s;
+      display: block;
+      margin: 0 auto;
+    }
+    .custom-play-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(69,121,234,0.92);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      font-size: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+      cursor: pointer;
+      transition: background 0.18s, transform 0.18s;
+      z-index: 2;
+      padding: 0;
+    }
+    .custom-play-btn i {
+      margin-left: 4px;
+      margin-top: 2px;
+    }
+    .custom-play-btn:hover {
+      background: #fff;
+      color: #4579ea;
+      transform: translate(-50%, -50%) scale(1.12);
+      box-shadow: 0 8px 32px rgba(69,121,234,0.18);
+    }
+    .festival-laurels {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      margin: 0px 0 24px 0;
+    }
+    .laurel-img {
+      height: 180px;
+      filter: drop-shadow(0 2px 8px rgba(69,121,234,0.10));
+      transition: transform 0.18s;
+    }
+    .laurel-img:hover {
+      transform: scale(1.08);
+      filter: drop-shadow(0 4px 16px rgba(69,121,234,0.18));
+    }
+    .production-details-card {
+      background: #23283a;
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin: 1px auto 45px auto;
+      color: #e0e0e0;
+      max-width: 600px;
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 1.08rem;
+    }
+    .production-details-card i {
+      color: #4579ea;
+      font-size: 1.4rem;
+      margin-top: 2px;
+    }
+    .highlight-compositing {
+      background:#23283a;
+      border-radius:12px;
+      padding:14px 20px;
+      margin:18px auto 32px auto;
+      color:#e0e0e0;
+      max-width:600px;
+      box-shadow:0 2px 12px 0 rgba(0,0,0,0.12);
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size: 1.08rem;
+    }
+    .highlight-compositing i {
+      color:#4579ea;
+      font-size:1.4rem;
+    }
+    .before-after-section {
+      max-width: 900px;
+      margin: 0 auto 48px auto;
+      padding: 0 16px;
+    }
+    .before-after-section h2 {
+      color: #4579ea;
+      margin: 32px 0 18px 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .before-after-videos {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .before-after-video {
+      position: relative;
+      max-width: 350px;
+      width: auto;
+    }
+    .before-after-thumb {
+      max-width: 350px;
+      width: 100%;
+      border-radius: 0;
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
+      background: #222;
+      cursor: pointer;
+      display: block;
+    }
+
+    .highlight-backgrounds {
+    background: #23283a;
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin: 0px auto 50px auto;
+    color: #e0e0e0;
+    max-width: 600px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.08rem;
+    }
+   .highlight-backgrounds i {
+    color: #4579ea;
+    font-size: 1.4rem;
+    }
+    
+    /* Modal styles (igual que antes) */
+    .gallery-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.55);
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.3s;
+    }
+    .gallery-modal.active {
+      display: flex;
+    }
+    .gallery-modal-img,
+    .gallery-modal-video {
+      max-width: 80vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 4px 32px 0 rgba(0,0,0,0.28);
+      background: #222;
+      object-fit: contain;
+      z-index: 2;
+      margin: auto;
+      display: block;
+    }
+    .gallery-modal-video {
+      background: #222;
+    }
+    .gallery-modal-btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 54px;
+      height: 54px;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #galleryPrev, #galleryNext {
+      display: none !important;
+    }
+    .gallery-modal-close {
+      position: fixed;
+      top: 32px;
+      right: 32px;
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-modal-close:hover {
+      background: #4579ea;
+      color: #fff;
+    }
+    @media (max-width: 900px) {
+      .ngau-kahua-thumb {
+        width: 90vw;
+        max-width: 90vw;
+      }
+      .gallery-modal-close {
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+      }
+      .before-after-videos {
+        flex-direction: column;
+        gap: 18px;
+      }
+      .before-after-video {
+        max-width: 98vw;
+      }
+      .before-after-thumb {
+        max-width: 98vw;
+      }
+    }
+
+.highlight-video-editor {
+  background: #23283a;
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin: 50px auto 30px auto;
+  color: #e0e0e0;
+  max-width: 600px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.08rem;
+}
+.highlight-video-editor i {
+  color: #4579ea;
+  font-size: 1.4rem;
+}
+    
+  </style>
+          <style>
+    @media (max-width: 700px) {
+      nav > a,
+      nav > .dropdown {
+        display: none !important;
+      }
+      nav > a[href="collaborations-es.html"],
+      nav > a[href="about-es.html"],
+      nav > .dropdown > a[href="about-es.html"] {
+        display: inline-block !important;
+      }
+      .lang-btn {
+        display: inline-block !important;
+        margin-right: 4vw; /* Ajusta este valor según lo que te guste */
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <nav>
+        <div class="dropdown">
+          <a href="index-es.html" >Portafolio</a>
+        </div>
+        <div class="dropdown">
+          <a href="animation-es.html" >Animación</a>
+          <div class="dropdown-content">
+            <a href="animation-2d-es.html">2D</a>
+            <a href="animation-3d-es.html">3D</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="visual-development-es.html" >Desarrollo Visual</a>
+          <div class="dropdown-content">
+            <a href="background-art-es.html">Arte de Fondos</a>
+            <a href="posters-es.html">Pósters</a>
+            <a href="styleframes-es.html">Styleframes</a>
+            <a href="manga-coloring-es.html">Coloreo de Manga</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="color-design-es.html" >Diseño de Color</a>
+          <div class="dropdown-content">
+            <a href="color-exploration-es.html">Exploración de Color</a>
+            <a href="colorscripts-es.html">Colorscripts</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="shortfilms-es.html" class="active-link">Cortometrajes</a>
+          <div class="dropdown-content">
+            <a href="estare-siempre-contigo-es.html">Estaré Siempre Contigo</a>
+            <a href="ngau-kahua-es.html">Ngau Kahua</a>
+            <a href="munay-teaser-es.html">Munay (Teaser)</a>
+          </div>
+        </div>
+        <a href="collaborations-es.html" class="about-link">Colaboraciones</a>
+        <a href="about-es.html" class="about-link">Acerca de</a>
+        </nav>
+      <button id="langToggle" class="lang-btn" aria-label="Change language">ES</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-section animation-intro">
+      <h1 class="portfolio-title">Estaré Siempre Contigo</h1>
+      <p class="intro-text">
+        "Estaré Siempre Contigo" es un cortometraje que produje en colaboración con otros dos artistas durante mi segundo año en la universidad. Me desempeñé como director general, director de arte, productor general y director de post-producción.
+      </p>
+    </section>
+    <div class="production-details-card">
+      <i class="fas fa-info-circle"></i>
+      <span>
+        <strong>Detalles de Producción:</strong><br>
+        Año: 2022<br>
+        Duración: 2 min<br>
+        Equipo: Loreto Gómez, Damián Hernández (Aníbal Farías), Benjamín Espinoza <br>
+        Técnica: Animación Digital 2D<br>
+      </span>
+    </div>
+    <div class="ngau-kahua-flex">
+      <video id="escVideo" src="EstaréSiempreContigo.mp4" poster="Escvideocard.webp" class="gallery-thumb ngau-kahua-thumb" data-type="video" data-index="0" muted></video>
+      <button id="customPlayBtn" class="custom-play-btn" aria-label="Play">
+        <i class="fas fa-play"></i>
+      </button>
+    </div>
+    <div class="laurels-main">
+      <div class="laurel-group">
+        <img src="laurelesc.webp" alt="Winner" class="laurel-img-big">
+      </div>
+    </div>
+    <div class="highlight-compositing">
+      <i class="fas fa-layer-group"></i>
+      <span>
+        <strong>Director de Post-Producción:</strong> Dirigí todo el proceso de post-producción, combinando animación, fondos, efectos y color para lograr el aspecto final de cada escena.
+      </span>
+    </div>
+    <div class="before-after-section">
+      <div class="before-after-videos">
+        <div class="before-after-video">
+          <video id="beforeVideo" src="esccompo1.mp4" poster="esccompocard1.webp" class="gallery-thumb before-after-thumb" data-type="video" data-index="1" muted></video>
+          <button id="beforePlayBtn" class="custom-play-btn" aria-label="Play">
+            <i class="fas fa-play"></i>
+          </button>
+        </div>
+        <div class="before-after-video">
+          <video id="afterVideo" src="esccompo2.mp4" poster="esccompocard2.webp" class="gallery-thumb before-after-thumb" data-type="video" data-index="2" muted></video>
+          <button id="afterPlayBtn" class="custom-play-btn" aria-label="Play">
+            <i class="fas fa-play"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Card de background art director -->
+    <div class="highlight-backgrounds">
+      <i class="fas fa-image"></i>
+      <span>
+        <strong>Director de Arte de Fondos:</strong> Estuve a cargo de dirigir el arte de fondos y realicé todos los renderizados de estos.
+      </span>
+    </div>
+    <!-- Galería de imágenes de fondo -->
+    <div class="background-art-gallery">
+      <div>
+        <img src="escbgbefore01_thumb.webp" data-full= "escbgbefore01.webp" alt="Background Art 1" class="gallery-thumb background-art-thumb" data-type="img" data-index="0">
+        <img src="BG_ESC_04_thumb.webp" data-full= "BG_ESC_04.webp" alt="Background Art 2" class="gallery-thumb background-art-thumb" data-type="img" data-index="1">
+        <img src="escbgbefore02_thumb.webp" data-full= "escbgbefore02.webp" alt="Background Art 3" class="gallery-thumb background-art-thumb" data-type="img" data-index="2">
+        <img src="BG_ESC_03_thumb.webp" data-full= "BG_ESC_03.webp" alt="Background Art 4" class="gallery-thumb background-art-thumb" data-type="img" data-index="3">
+        <img src="escbgbefore03_thumb.webp" data-full= "escbgbefore03.webp" alt="Background Art 5" class="gallery-thumb background-art-thumb" data-type="img" data-index="4">
+        <img src="BG_ESC_05_thumb.webp" data-full= "BG_ESC_05.webp" alt="Background Art 6" class="gallery-thumb background-art-thumb" data-type="img" data-index="5">
+      </div>
+    </div>
+    <!-- Highlight: Video Editor -->
+    <div class="highlight-video-editor">
+      <i class="fas fa-cut"></i>
+      <span>
+        <strong>Editor de Video:</strong> Edité todo el cortometraje, manejando todo el montaje de video utilizando Premiere Pro.
+      </span>
+    </div>
+    <!-- Contact Card (debe ir debajo del highlight-video-editor) -->
+    <div class="contact-details-card">
+      <div class="contact-title">Contáctame</div>
+      <div class="contact-icons">
+        <a href="mailto:damianh082003@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.instagram.com/damianh_art" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+    <div class="gallery-modal" id="galleryModal">
+      <button class="gallery-modal-close" id="galleryClose" aria-label="Close"><i class="fas fa-times"></i></button>
+      <button class="gallery-modal-btn" id="galleryPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <img src="" alt="Gallery Full" class="gallery-modal-img" id="galleryModalImg" style="display:none;">
+      <video src="" controls class="gallery-modal-video" id="galleryModalVideo" style="display:none;"></video>
+      <button class="gallery-modal-btn" id="galleryNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </main>
+      <footer>
+    <div class="footer-content">
+      © 2025 Damián Hernández. Todos los derechos reservados.
+    </div>
+  </footer>
+
+        <script>
+  const langBtn = document.getElementById('langToggle');
+  // Detecta si estás en la versión español
+  let isSpanish = window.location.pathname.includes('-es.html');
+  langBtn.textContent = isSpanish ? 'EN' : 'ES';
+
+  langBtn.addEventListener('click', function() {
+    // Cambia preferencia en localStorage
+    localStorage.setItem('lang', isSpanish ? 'en' : 'es');
+    // Redirige a la versión opuesta
+    let newUrl = window.location.pathname;
+    if (isSpanish) {
+      newUrl = newUrl.replace('-es.html', '.html');
+    } else {
+      newUrl = newUrl.replace('.html', '-es.html');
+    }
+    window.location.pathname = newUrl;
+  });
+
+  // Al cargar, redirige según preferencia guardada
+  window.addEventListener('DOMContentLoaded', function() {
+    const langPref = localStorage.getItem('lang');
+    if (langPref === 'es' && !window.location.pathname.includes('-es.html')) {
+      window.location.pathname = window.location.pathname.replace('.html', '-es.html');
+    }
+    if (langPref === 'en' && window.location.pathname.includes('-es.html')) {
+      window.location.pathname = window.location.pathname.replace('-es.html', '.html');
+    }
+  });
+</script>
+  
+  <script>
+    // Galería interactiva con soporte para imágenes y videos
+    const thumbs = document.querySelectorAll('.gallery-thumb');
+    const modal = document.getElementById('galleryModal');
+    const modalImg = document.getElementById('galleryModalImg');
+    const modalVideo = document.getElementById('galleryModalVideo');
+    const closeBtn = document.getElementById('galleryClose');
+    const prevBtn = document.getElementById('galleryPrev');
+    const nextBtn = document.getElementById('galleryNext');
+    const items = Array.from(thumbs).map(el => ({
+  type: el.dataset.type,
+  src: el.dataset.full || el.src || el.getAttribute('src'), // usa data-full si existe
+  poster: el.getAttribute('poster') || ''
+}));
+    let currentIndex = 0;
+
+    function openModal(index) {
+      currentIndex = index;
+      showItem(currentIndex);
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      modalImg.style.display = 'none';
+      modalVideo.style.display = 'none';
+      modalVideo.pause();
+    }
+
+    function showItem(index) {
+      currentIndex = (index + items.length) % items.length;
+      const item = items[currentIndex];
+      if (item.type === 'img') {
+        modalImg.src = item.src;
+        modalImg.style.display = 'block';
+        modalVideo.style.display = 'none';
+        modalVideo.pause();
+      } else if (item.type === 'video') {
+        modalVideo.src = item.src;
+        modalVideo.poster = item.poster;
+        modalVideo.style.display = 'block';
+        modalImg.style.display = 'none';
+        modalVideo.play();
+      }
+    }
+
+    thumbs.forEach((thumb, idx) => {
+      thumb.addEventListener('click', () => openModal(idx));
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // Flechas ocultas porque solo hay un video
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+
+    // Cerrar con ESC
+    window.addEventListener('keydown', (e) => {
+      if (modal.classList.contains('active')) {
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') showItem(currentIndex - 1);
+        if (e.key === 'ArrowRight') showItem(currentIndex + 1);
+      }
+    });
+
+    // Cerrar al click fuera de la imagen/video
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  </script>
+  <script>
+    // Botón de play personalizado para el video principal y before/after
+    document.addEventListener('DOMContentLoaded', function() {
+      // Principal
+      const ngauKahuaVideo = document.getElementById('ngauKahuaVideo');
+      const customPlayBtn = document.getElementById('customPlayBtn');
+      customPlayBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal(0);
+      });
+
+      // Before
+      const beforePlayBtn = document.getElementById('beforePlayBtn');
+      beforePlayBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal(1);
+      });
+
+      // After
+      const afterPlayBtn = document.getElementById('afterPlayBtn');
+      afterPlayBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal(2);
+      }); 
+    });
+      

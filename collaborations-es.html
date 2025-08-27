@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <script>
+  (function() {
+    var langPref = localStorage.getItem('lang');
+    var path = window.location.pathname;
+    if (langPref === 'es' && !path.includes('-es.html')) {
+      window.location.replace(path.replace('.html', '-es.html'));
+    }
+    if (langPref === 'en' && path.includes('-es.html')) {
+      window.location.replace(path.replace('-es.html', '.html'));
+    }
+  })();
+</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ctext x='50%25' y='72%25' text-anchor='middle' font-size='36' font-family='Poppins,Arial,sans-serif' fill='%234579ea' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Colaboraciones - Damián Hernández | Animador Digital</title>
+  <meta name="description" content="Portafolio de Damián Hernández, animador digital y artista. Explora mis colaboraciones y experiencia profesional.">
+  <style>
+    .collab-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      max-width: 700px;
+      margin: 15px auto 48px auto;
+    }
+    .collab-card {
+      background: #23283a;
+      border-radius: 12px;
+      padding: 18px 24px;
+      color: #e0e0e0;
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 1.08rem;
+      transition: box-shadow 0.18s, transform 0.18s;
+      will-change: transform;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .collab-card i {
+      color: #4579ea;
+      font-size: 2rem;
+      min-width: 40px;
+      text-align: center;
+    }
+    .collab-card:hover {
+      box-shadow: 0 8px 24px rgba(69,121,234,0.18);
+      transform: scale(1.02);
+      text-decoration: none;
+      color: #e0e0e0;
+    }
+  </style>
+          <style>
+    @media (max-width: 700px) {
+      nav > a,
+      nav > .dropdown {
+        display: none !important;
+      }
+      nav > a[href="collaborations-es.html"],
+      nav > a[href="about-es.html"],
+      nav > .dropdown > a[href="about-es.html"] {
+        display: inline-block !important;
+      }
+      .lang-btn {
+        display: inline-block !important;
+        margin-right: 4vw; /* Ajusta este valor según lo que te guste */
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <nav>
+        <div class="dropdown">
+          <a href="index-es.html" >Portafolio</a>
+        </div>
+        <div class="dropdown">
+          <a href="animation-es.html" >Animación</a>
+          <div class="dropdown-content">
+            <a href="animation-2d-es.html">2D</a>
+            <a href="animation-3d-es.html">3D</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="visual-development-es.html">Desarrollo Visual</a>
+          <div class="dropdown-content">
+            <a href="background-art-es.html">Arte de Fondos</a>
+            <a href="posters-es.html">Pósters</a>
+            <a href="styleframes-es.html">Styleframes</a>
+            <a href="manga-coloring-es.html">Coloreo de Manga</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="color-design-es.html">Diseño de Color</a>
+          <div class="dropdown-content">
+            <a href="color-exploration-es.html">Exploración de Color</a>
+            <a href="colorscripts-es.html">Colorscripts</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="shortfilms-es.html">Cortometrajes</a>
+          <div class="dropdown-content">
+            <a href="estare-siempre-contigo-es.html">Estaré Siempre Contigo</a>
+            <a href="ngau-kahua-es.html">Ngau Kahua</a>
+            <a href="munay-teaser-es.html">Munay (Teaser)</a>
+          </div>
+        </div>
+        <a href="collaborations-es.html" class="active-link">Colaboraciones</a>
+        <a href="about-es.html">Acerca de</a>
+        </nav>
+      <button id="langToggle" class="lang-btn" aria-label="Change language">ES</button>
+    </div>
+  </header>
+  <main>
+    <section class="intro-section animation-intro">
+      <h1 class="portfolio-title">Colaboraciones</h1>
+      <p class="intro-text">
+        Aquí puedes encontrar una selección de proyectos colaborativos y experiencias profesionales donde trabajé como parte de un equipo, contribuí a procesos creativos o apoyé a organizaciones y estudios.
+      </p>
+    </section>
+    <div class="collab-cards-container">
+      <!-- Universidad Mayor -->
+      <a class="collab-card" href="https://www.umayor.cl/santiago" target="_blank" rel="noopener">
+        <i class="fas fa-university"></i>
+        <span>
+          <strong>Universidad Mayor</strong><br>
+          <em>Ayudante de Profesor</em><br>
+          Trabajé durante un semestre como ayudante de un profesor en las clases de "Dirección de Arte" (2023).
+        </span>
+      </a>
+      <!-- Despiertoc Films -->
+      <a class="collab-card" href="https://despiertocfilms.cl" target="_blank" rel="noopener">
+        <i class="fas fa-building"></i>
+        <span>
+          <strong>Despiertoc Films</strong><br>
+          <em>Practicante & Artista Freelance</em><br>
+          Completé mi práctica profesional y luego colaboré en artes de fondo por encargo (2025).
+        </span>
+      </a>
+      <!-- Proyecto voluntario videojuego AOTTG 2 -->
+      <a class="collab-card" href="https://aottg2.com" target="_blank" rel="noopener">
+        <i class="fas fa-gamepad"></i>
+        <span>
+          <strong>AOTTG 2</strong><br>
+          <em>Animador 3D Voluntario</em><br>
+          Creé animaciones de personajes para una secuela de videojuego no lucrativa y impulsada por fans (2020-2025).
+        </span>
+      </a>
+      <!-- Colaboración manga Shingeki no Kyojin -->
+      <div class="collab-card">
+        <i class="fas fa-paint-brush"></i>
+        <span>
+          <strong>"Shin-Color No Kyojin (SCNK)"</strong><br>
+          <em>Artista de Color</em><br>
+          Colaboré con un grupo internacional de artistas a través de Discord para colorear capítulos seleccionados del manga "Shingeki no Kyojin" (2018-2024).
+        </span>
+      </div>
+    </div>
+    <div class="contact-details-card">
+  <div class="contact-title">Contáctame</div>
+  <div class="contact-icons">
+    <a href="mailto:damianh082003@gmail.com" aria-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.instagram.com/damianh_art" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</div>
+</div>
+  </main>
+      <footer>
+    <div class="footer-content">
+      © 2025 Damián Hernández. Todos los derechos reservados.
+    </div>
+  </footer>
+        <script>
+  const langBtn = document.getElementById('langToggle');
+  // Detecta si estás en la versión español
+  let isSpanish = window.location.pathname.includes('-es.html');
+  langBtn.textContent = isSpanish ? 'EN' : 'ES';
+
+  langBtn.addEventListener('click', function() {
+    // Cambia preferencia en localStorage
+    localStorage.setItem('lang', isSpanish ? 'en' : 'es');
+    // Redirige a la versión opuesta
+    let newUrl = window.location.pathname;
+    if (isSpanish) {
+      newUrl = newUrl.replace('-es.html', '.html');
+    } else {
+      newUrl = newUrl.replace('.html', '-es.html');
+    }
+    window.location.pathname = newUrl;
+  });
+
+  // Al cargar, redirige según preferencia guardada
+  window.addEventListener('DOMContentLoaded', function() {
+    const langPref = localStorage.getItem('lang');
+    if (langPref === 'es' && !window.location.pathname.includes('-es.html')) {
+      window.location.pathname = window.location.pathname.replace('.html', '-es.html');
+    }
+    if (langPref === 'en' && window.location.pathname.includes('-es.html')) {
+      window.location.pathname = window.location.pathname.replace('-es.html', '.html');
+    }
+  });
+</script>
+</body>
+</html>

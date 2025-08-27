@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <script>
+  (function() {
+    var langPref = localStorage.getItem('lang');
+    var path = window.location.pathname;
+    if (langPref === 'es' && !path.includes('-es.html')) {
+      window.location.replace(path.replace('.html', '-es.html'));
+    }
+    if (langPref === 'en' && path.includes('-es.html')) {
+      window.location.replace(path.replace('-es.html', '.html'));
+    }
+  })();
+</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ctext x='50%25' y='72%25' text-anchor='middle' font-size='36' font-family='Poppins,Arial,sans-serif' fill='%234579ea' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Acerca de - Damián Hernández | Animador Digital</title>
+  <meta name="description" content="Portafolio de Damián Hernández, animador digital y artista. Explora sobre mí, mis habilidades y mi trayectoria artística.">
+  <style>
+    .about-main-container {
+      max-width: 800px;
+      margin: 40px auto 48px auto;
+      background: #23283a;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px 0 rgba(0,0,0,0.12);
+      padding: 32px 32px 40px 32px;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+    .about-photo {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 2px 12px rgba(69,121,234,0.18);
+      border: 4px solid #4579ea;
+      margin-bottom: 12px;
+    }
+    .about-details-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+    .about-details-list li {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .about-details-list i {
+      color: #4579ea;
+      min-width: 22px;
+      text-align: center;
+    }
+    .about-description {
+      font-size: 1.13rem;
+      margin-bottom: 18px;
+      text-align: center;
+      line-height: 1.7;
+    }
+    .about-contact-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 0px;
+    }
+    .about-contact-links a {
+      color: #4579ea;
+      font-size: 1.5rem;
+      transition: color 0.18s;
+    }
+    .about-contact-links a:hover {
+      color: #e0e0e0;
+    }
+  </style>
+          <style>
+    @media (max-width: 700px) {
+      nav > a,
+      nav > .dropdown {
+        display: none !important;
+      }
+      nav > a[href="collaborations-es.html"],
+      nav > a[href="about-es.html"],
+      nav > .dropdown > a[href="about-es.html"] {
+        display: inline-block !important;
+      }
+      .lang-btn {
+        display: inline-block !important;
+        margin-right: 4vw; /* Ajusta este valor según lo que te guste */
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+ <header>
+    <div class="header-content">
+      <nav>
+        <div class="dropdown">
+          <a href="index-es.html" >Portafolio</a>
+        </div>
+        <div class="dropdown">
+          <a href="animation-es.html">Animación</a>
+          <div class="dropdown-content">
+            <a href="animation-2d-es.html">2D</a>
+            <a href="animation-3d-es.html">3D</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="visual-development-es.html" >Desarrollo Visual</a>
+          <div class="dropdown-content">
+            <a href="background-art-es.html">Arte de Fondos</a>
+            <a href="posters-es.html">Pósters</a>
+            <a href="styleframes-es.html">Styleframes</a>
+            <a href="manga-coloring-es.html">Coloreo de Manga</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="color-design-es.html">Diseño de Color</a>
+          <div class="dropdown-content">
+            <a href="color-exploration-es.html">Exploración de Color</a>
+            <a href="colorscripts-es.html">Colorscripts</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="shortfilms-es.html">Cortometrajes</a>
+          <div class="dropdown-content">
+            <a href="estare-siempre-contigo-es.html">Estaré Siempre Contigo</a>
+            <a href="ngau-kahua-es.html">Ngau Kahua</a>
+            <a href="munay-teaser-es.html">Munay (Teaser)</a>
+          </div>
+        </div>
+        <a href="collaborations-es.html" >Colaboraciones</a>
+        <a href="about-es.html" class="active-link">Acerca de</a>
+        </nav>
+      <button id="langToggle" class="lang-btn" aria-label="Change language">ES</button>
+    </div>
+  </header>
+  <main>
+    <section>
+      <div class="about-main-container">
+        <img src="MiFoto.webp" alt="Damián Hernández Portrait" class="about-photo" />
+        <div class="about-description">
+          Damían Hernández es un animador digital chileno en su último año en la Universidad Mayor. Sus habilidades más fuertes están en animación 3D, diseño de color (para colorscripts y exploración de color), post-producción, pintura de fondos, edición de video y la capacidad de adaptarse a diferentes estilos artísticos. También tiene conocimientos y experiencia básica en storyboard, layout, clean up, producción general, dirección de arte y dirección general. Damián prospera en entornos colaborativos, aportando una actitud proactiva y fuertes habilidades de comunicación a cada equipo. Su compromiso con la excelencia creativa y la adaptabilidad le permiten ofrecer resultados de alta calidad de manera consistente en diversos proyectos.
+
+Posee un nivel de inglés intermedio alto, con una certificación TOEFL en el nivel B2.
+        </div>
+        <div class="about-contact-links">
+          <a href="mailto:damianh082003@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.instagram.com/damianh_art" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </section>
+    <div class="about-skills-card">
+  <h2 class="about-skills-title">Programas Usados</h2>
+  <div class="about-skills-logos">
+    <div class="skill-logo" title="Adobe Photoshop">
+      <img src="Adobe_Photoshop_CC_icon.svg.webp" alt="Photoshop Logo">
+      <span>Photoshop</span>
+    </div>
+    <div class="skill-logo" title="Adobe After Effects">
+      <img src="Adobe_After_Effects_CC_icon.svg.webp" alt="After Effects Logo">
+      <span>After Effects</span>
+    </div>
+    <div class="skill-logo" title="Adobe Premiere Pro">
+      <img src="Adobe_Premiere_Pro_CC_icon.svg.webp" alt="Premiere Pro Logo">
+      <span>Premiere Pro</span>
+    </div>
+    <div class="skill-logo" title="Blender">
+      <img src="Blender_logo_no_text.svg.webp" alt="Blender Logo">
+      <span>Blender</span>
+    </div>
+    <div class="skill-logo" title="Autodesk Maya">
+      <img src="maya.webp" alt="Maya Logo">
+      <span>Maya</span>
+    </div>
+    <div class="skill-logo" title="Toon Boom Harmony">
+      <img src="harmony.webp" alt="Toon Boom Harmony Logo">
+      <span>Harmony</span>
+    </div>
+    <div class="skill-logo" title="Clip Studio Paint">
+      <img src="Clip_Studio_Paint_app_logo.webp" alt="Clip Studio Paint Logo">
+      <span>Clip Studio</span>
+    </div>
+    <div class="skill-logo" title="Procreate">
+      <img src="Procreate_icon.webp" alt="Procreate Logo">
+      <span>Procreate</span>
+    </div>
+  </div>
+</div>
+  </main>
+      <footer>
+    <div class="footer-content">
+      © 2025 Damián Hernández. Todos los derechos reservados.
+    </div>
+  </footer>
+        <script>
+  const langBtn = document.getElementById('langToggle');
+  // Detecta si estás en la versión español
+  let isSpanish = window.location.pathname.includes('-es.html');
+  langBtn.textContent = isSpanish ? 'EN' : 'ES';
+
+  langBtn.addEventListener('click', function() {
+    // Cambia preferencia en localStorage
+    localStorage.setItem('lang', isSpanish ? 'en' : 'es');
+    // Redirige a la versión opuesta
+    let newUrl = window.location.pathname;
+    if (isSpanish) {
+      newUrl = newUrl.replace('-es.html', '.html');
+    } else {
+      newUrl = newUrl.replace('.html', '-es.html');
+    }
+    window.location.pathname = newUrl;
+  });
+
+  // Al cargar, redirige según preferencia guardada
+  window.addEventListener('DOMContentLoaded', function() {
+    const langPref = localStorage.getItem('lang');
+    if (langPref === 'es' && !window.location.pathname.includes('-es.html')) {
+      window.location.pathname = window.location.pathname.replace('.html', '-es.html');
+    }
+    if (langPref === 'en' && window.location.pathname.includes('-es.html')) {
+      window.location.pathname = window.location.pathname.replace('-es.html', '.html');
+    }
+  });
+</script>
+</body>
+</html>

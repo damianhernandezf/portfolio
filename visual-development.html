@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+  (function() {
+    var langPref = localStorage.getItem('lang');
+    var path = window.location.pathname;
+    if (langPref === 'es' && !path.includes('-es.html')) {
+      window.location.replace(path.replace('.html', '-es.html'));
+    }
+    if (langPref === 'en' && path.includes('-es.html')) {
+      window.location.replace(path.replace('-es.html', '.html'));
+    }
+  })();
+</script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ctext x='50%25' y='72%25' text-anchor='middle' font-size='36' font-family='Poppins,Arial,sans-serif' fill='%234579ea' font-weight='bold'%3ED%3C/text%3E%3C/svg%3E">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Visual Development - Damián Hernández | Digital Animator</title>
+  <meta name="description" content="Portfolio of Damián Hernández, digital animator and artist. Explore my work in visual development, including backgrounds, posters, styleframes, and manga coloring.">
+
+        <style>
+    @media (max-width: 700px) {
+      nav > a,
+      nav > .dropdown {
+        display: none !important;
+      }
+      nav > a[href="collaborations.html"],
+      nav > a[href="about.html"],
+      nav > .dropdown > a[href="about.html"] {
+        display: inline-block !important;
+      }
+      .lang-btn {
+        display: inline-block !important;
+        margin-right: 4vw; /* Ajusta este valor según lo que te guste */
+        margin-left: 0;
+      }
+    }
+  </style>
+
+</head>
+<body>
+ <header>
+    <div class="header-content">
+      <nav>
+        <div class="dropdown">
+          <a href="index.html" >Portfolio</a>
+        </div>
+        <div class="dropdown">
+          <a href="animation.html">Animation</a>
+          <div class="dropdown-content">
+            <a href="animation-2d.html">2D</a>
+            <a href="animation-3d.html">3D</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="visual-development.html" class="active-link">Visual Development</a>
+          <div class="dropdown-content">
+            <a href="background-art.html">Background Art</a>
+            <a href="posters.html">Posters</a>
+            <a href="styleframes.html">Styleframes</a>
+            <a href="manga-coloring.html">Manga Coloring</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="color-design.html">Color Design</a>
+          <div class="dropdown-content">
+            <a href="color-exploration.html">Color Exploration</a>
+            <a href="colorscripts.html">Colorscripts</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="shortfilms.html">Shortfilms</a>
+          <div class="dropdown-content">
+            <a href="estare-siempre-contigo.html">Estaré Siempre Contigo</a>
+            <a href="ngau-kahua.html">Ngau Kahua</a>
+            <a href="munay-teaser.html">Munay (Teaser)</a>
+          </div>
+        </div>
+        <a href="collaborations.html" class="about-link">Collaborations</a>
+        <a href="about.html" class="about-link">About</a>
+        </nav>
+      <button id="langToggle" class="lang-btn" aria-label="Change language">ES</button>
+    </div>
+  </header>
+
+<!-- Solo visible en móvil -->
+<div class="mobile-avatar-block">
+  <img src="ProfilePicture.webp" alt="Avatar of Damián Hernández" class="profile-avatar">
+  <h2 class="main-name logo">Damián Hernández</h2>
+</div>
+
+
+  <main>
+    <section class="intro-section visualart-intro">
+      <h1 class="portfolio-title">Visual Development</h1>
+      <p class="intro-text">
+        Explore my visual development works, including backgrounds, posters, styleframes, and manga coloring.
+      </p>
+    </section>
+    <div class="portfolio-categories">
+      <a href="background-art.html" class="category-card">
+        <img src="BG_Munay_02.webp" alt="Background Art" />
+        <h3>BACKGROUND ART</h3>
+      </a>
+      <a href="posters.html" class="category-card">
+        <img src="Postercard.webp" alt="Posters" />
+        <h3>POSTERS</h3>
+      </a>
+      <a href="styleframes.html" class="category-card">
+        <img src="Styleframe03.webp" alt="Styleframes" />
+        <h3>STYLEFRAMES</h3>
+      </a>
+      <a href="manga-coloring.html" class="category-card">
+        <img src="mangacard.webp" alt="Manga Coloring" />
+        <h3>MANGA COLORING</h3>
+      </a>
+    </div>
+    <div class="contact-details-card">
+  <div class="contact-title">Contact Me</div>
+  <div class="contact-icons">
+    <a href="mailto:damianh082003@gmail.com" aria-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.instagram.com/damianh_art" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</div>
+  </main>
+      <footer>
+    <div class="footer-content">
+      © 2025 Damián Hernández. All rights reserved.
+    </div>
+  </footer>
+    <script>
+  const langBtn = document.getElementById('langToggle');
+  // Detecta si estás en la versión español
+  let isSpanish = window.location.pathname.includes('-es.html');
+  langBtn.textContent = isSpanish ? 'EN' : 'ES';
+
+  langBtn.addEventListener('click', function() {
+    // Cambia preferencia en localStorage
+    localStorage.setItem('lang', isSpanish ? 'en' : 'es');
+    // Redirige a la versión opuesta
+    let newUrl = window.location.pathname;
+    if (isSpanish) {
+      newUrl = newUrl.replace('-es.html', '.html');
+    } else {
+      newUrl = newUrl.replace('.html', '-es.html');
+    }
+    window.location.pathname = newUrl;
+  });
+
+  // Al cargar, redirige según preferencia guardada
+  window.addEventListener('DOMContentLoaded', function() {
+    const langPref = localStorage.getItem('lang');
+    if (langPref === 'es' && !window.location.pathname.includes('-es.html')) {
+      window.location.pathname = window.location.pathname.replace('.html', '-es.html');
+    }
+    if (langPref === 'en' && window.location.pathname.includes('-es.html')) {
+      window.location.pathname = window.location.pathname.replace('-es.html', '.html');
+    }
+  });
+</script>
+</body>
+</html>
